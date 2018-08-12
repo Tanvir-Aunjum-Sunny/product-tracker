@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "683172856110",
+    "firebase_url": "https://product-tracker-14f67.firebaseio.com",
+    "project_id": "product-tracker-14f67",
+    "storage_bucket": "product-tracker-14f67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683172856110:android:4803ecb4cce79885",
+        "android_client_info": {
+          "package_name": "playlagom.producttracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683172856110-2b5sg2bdp9mnen57aq5a8utbu806orvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "playlagom.producttracker",
+            "certificate_hash": "9ed24a35a6c2b97846cd01b1e53741dd1d13b502"
+          }
+        },
+        {
+          "client_id": "683172856110-5tk0pqouc4o9sg0c6u0kq1c3nc1ft25f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVe4Q9h-h4LdP_gL1doC5z3rcwsGRfeDg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683172856110-5tk0pqouc4o9sg0c6u0kq1c3nc1ft25f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

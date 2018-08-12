@@ -3,10 +3,12 @@ package playlagom.producttracker.auth;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,12 +48,16 @@ public class AuthLogin extends AppCompatActivity implements View.OnClickListener
 
     private int counter = 1;
 
+    public static RelativeLayout RelativeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_auth_login);
+
+        RelativeLayout =  findViewById(R.id.relativeLayout1);
 
         // check internet connection
         if (!isInternetOn()) {
@@ -102,12 +109,37 @@ public class AuthLogin extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if (v == btnSignIn) {
-            loginUser();
+            if(!isInternetOn()){
+                showSnackbar();
+            }else{
+                loginUser();
+            }
         }
         if (v == tvSignUp) {
             startActivity(new Intent(AuthLogin.this, AuthSignUp.class));
             finish();
         }
+    }
+
+    public void showSnackbar() {
+        final Snackbar snackbar = Snackbar
+                .make(RelativeLayout, "No internet connection!", Snackbar.LENGTH_LONG)
+                .setAction("RETRY", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Snackbar snackbar1 = Snackbar.make(RelativeLayout,"Retry Login Using Your Connection Again",Snackbar.LENGTH_SHORT);
+                        snackbar1.show();
+                    }
+                });
+
+        // Changing message text color
+        snackbar.setActionTextColor(Color.RED);
+
+        // Changing action button text color
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.YELLOW);
+        snackbar.show();
     }
 
     private void loginUser() {

@@ -83,7 +83,7 @@ public class SearchResultActivity  extends FragmentActivity implements
                         String str = "phone: " + addressList.get(0).getPhone() + ", ";
                         str += addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getAddressLine(0) + "";
-                        //                        Init.runMap(SearchResultActivity.this, mMap, latLng, str);
+                        // Init.runMap(SearchResultActivity.this, mMap, latLng, str);
 
                         mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)).position(latLng).title(counter++ + "m" ).snippet("Aftabnagar")).showInfoWindow();
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, lastZoomValue));

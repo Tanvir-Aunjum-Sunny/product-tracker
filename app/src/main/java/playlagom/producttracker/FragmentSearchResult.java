@@ -20,7 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by User on 12/11/2017.
  */
 
-public class FragmentSearchResult extends Fragment implements View.OnClickListener{
+public class FragmentSearchResult extends Fragment
+        implements View.OnClickListener{
 
     Communicator communicator;
     TextView letMeChoice;
@@ -30,7 +31,6 @@ public class FragmentSearchResult extends Fragment implements View.OnClickListen
     ImageView ivProductCenter, ivProductLeft, ivProductRight;
     TextView tvShopNameCenter, tvShopNameLeft, tvShopNameRight;
     TextView tvPriceCenter, tvPriceLeft, tvPriceRight;
-
 
     @Nullable
     @Override

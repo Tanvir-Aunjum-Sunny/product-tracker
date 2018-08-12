@@ -23,7 +23,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private LayoutInflater inflater;
     List<Product> productList = Collections.emptyList();
 
-    // create constructor to initialize context and productList sent from ProductListActivity
+    // CREATE constructor to initialize context and productList sent from ProductListActivity
     public ProductAdapter(Context context, List<Product> productList) {
         this.context = context;
         inflater = LayoutInflater.from(context);

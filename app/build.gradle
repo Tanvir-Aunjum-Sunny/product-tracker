@@ -5,11 +5,11 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "playlagom.producttracker"
+        applicationId "testserver.playlagom.producttracker"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 180
-        versionName "1.8.0"
+        versionCode 1110
+        versionName "1.11.0"
     }
 
     buildTypes {
@@ -22,6 +22,9 @@ android {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    // Messages Gradle Build: Warning:The app gradle file must have a dependency on com.google.firebase:firebase-core for Firebase services to work as intended.
+    implementation 'com.google.firebase:firebase-core:11.0.4'
+
     implementation 'com.google.firebase:firebase-database:11.0.4'
     implementation 'com.google.firebase:firebase-auth:11.0.4'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -35,7 +38,6 @@ dependencies {
 
     // snackbar
     implementation 'com.android.support:design:27.0.0'
-    // Add to the bottom of the file
-    apply plugin: 'com.google.gms.google-services'
 }
+// Add to the bottom of the file
 apply plugin: 'com.google.gms.google-services'
